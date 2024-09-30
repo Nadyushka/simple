@@ -348,22 +348,22 @@
         </div>
     </footer>
 
-    <dialog class="header__mobile-menu" id="mobileMenu">
-        <button class="header__mobile-cross" onclick="mobileMenu.close()" type="button">
+    <dialog class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__cross" onclick="mobileMenu.close()" type="button">
             <span class="visually-hidden">Скрыть мобильное меню</span>
         </button>
-        <ul class="header__menu-list">
-            <li class="header__menu-item item">
+        <ul class="mobile-menu__list">
+            <li class="mobile-menu__item" onclick="mobileMenu.close()">
                 <a href="#about-us" class="header__menu-link link">О нас</a>
             </li>
-            <li class="header__menu-item item">
-                <a href="" class="header__menu-link link">Материалы</a>
+            <li class="mobile-menu__item" onclick="mobileMenu.close()">
+                <a href="#materials" class="header__menu-link link">Материалы</a>
             </li>
-            <li class="header__menu-item">
-                <a href="" class="header__menu-link link">Продукция</a>
+            <li class="mobile-menu__item" onclick="mobileMenu.close()">
+                <a href="#products" class="header__menu-link link">Продукция</a>
             </li>
-            <li class="header__menu-item">
-                <a href="" class="header__menu-link link">Контакты</a>
+            <li class="mobile-menu__item" onclick="mobileMenu.close()">
+                <a href="#footer" class="header__menu-link link">Контакты</a>
             </li>
         </ul>
     </dialog>

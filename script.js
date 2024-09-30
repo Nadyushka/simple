@@ -19,3 +19,4 @@ const toggleHeaderSearchInput = (isOpen) => {
 
 headerSearchBtn.addEventListener('click', () => toggleHeaderSearchInput(false))
 headerSearchInputCloseButton.addEventListener('click', ()=>toggleHeaderSearchInput(true))
+

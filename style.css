@@ -26,7 +26,7 @@ font-face{
 
     --container-tablet-padding-x: 33px;
     --container-tablet-s-padding-x: 33px;
-    --container-monile-padding-x: 15px;
+    --container-mobile-padding-x: 15px;
 
     --container-destop: 1100px;
     --container-tablet: 690px;
@@ -161,7 +161,7 @@ body {
 
 @media(max-width: 600px) {
     .container {
-        padding-inline: var(--container-monile-padding-x);
+        padding-inline: var(--container-mobile-padding-x);
     }
 }
 
@@ -261,7 +261,8 @@ body {
     padding-right: 20px;
 }
 
-.header__mobile-menu {
+.header__mobile-menu,
+.mobile-menu {
     overflow: hidden;
     top: 0;
     left: 0;
@@ -271,26 +272,35 @@ body {
     max-height: 100%;
 }
 
-.header__mobile-menu .header__menu-list {
+.header__mobile-menu .header__menu-list,
+.mobile-menu__list {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;;
+    justify-content: center;
 }
 
-.header__mobile-menu .header__menu-item {
+.mobile-menu__list {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__mobile-menu .header__menu-item,
+.mobile-menu__item {
     height: auto;
     padding: 16px;
 }
 
-.header__mobile-cross {
+.mobile-menu__cross {
     width: 30px;
     aspect-ratio: 1;
     position: relative;
     top: 70px;
 }
 
-.header__mobile-cross::before,
-.header__mobile-cross::after {
+.mobile-menu__cross::before,
+.mobile-menu__cross::after {
     content: '';
     position: absolute;
     top: 15px;
@@ -299,18 +309,30 @@ body {
     background-color: var(--font-color-main);
 }
 
-.header__mobile-cross::before {
+.mobile-menu__cross::before {
     rotate: 45deg;
 }
 
-.header__mobile-cross::after {
+.mobile-menu__cross::after {
     rotate: -45deg;
 }
 
 @media (max-width: 1280px) {
   .header {
       height: var(--header-height-tablet);
+      position: relative;
   }
+
+    .header::before {
+        content: '';
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: var(--border-color);
+    }
+
 
     .header__body {
         padding-top: 11px;
@@ -320,6 +342,7 @@ body {
     .header__menu {
         order: 1;
         flex-basis: 100%;
+        height: auto;
     }
 
     .header__menu-list {
